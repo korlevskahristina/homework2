@@ -1,0 +1,10 @@
+kosa=hair, scythe
+motor=engine, scooter
+glusec=computer mouse, mouse
+list=leaf,paper
+majmunce=@,monkey
+blok=block, building
+guma=bubble, tire, rubber
+glava=head, leader, person
+pegla=iron, hair straightener
+cas=class, clock

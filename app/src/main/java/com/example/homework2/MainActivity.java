@@ -6,6 +6,9 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.io.InputStream;
+import java.util.Scanner;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -24,5 +27,19 @@ public class MainActivity extends AppCompatActivity {
             thedef.setText(definition);
         else
             thedef.setText("Word not found");
+    }
+
+    private String findDefinition(String theword) {
+        InputStream input = getResources().openRawResource(R.raw.myvocabulary);
+
+        Scanner scan = new Scanner(input);
+        while (scan.hasNextLine()){
+            String line = scan.nextLine();
+            String [] pieces = line.split("=");
+            if (pieces[0].equalsIgnoreCase(theword.trim())){
+                return pieces[1];
+            }
+        }
+        return null;
     }
 }
